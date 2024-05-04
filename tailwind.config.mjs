@@ -5,20 +5,13 @@ export default {
   theme: {
     extend: {
       colors: {
+        gray: "hsl(0, 0%, 75%)",
+        grayishViolet: "hsl(257, 7%, 63%)",
+        VeryDarkBlue: "hsl(255, 11%, 22%)",
+        VeryDarkViolet: "hsl(260, 8%, 14%)",
+        DarkViolet: "hsl(257, 27%, 26%)",
         white: "#f7f7f7",
-        cyan: {
-          50: "#f0fdfc",
-          100: "#ccfbf7",
-          200: "#99f6f0",
-          300: "#5eeae6",
-          400: "#2acfcf",
-          500: "#14b5b8",
-          600: "#0d8f94",
-          700: "#0f7176",
-          800: "#11595e",
-          900: "#134b4e",
-          950: "#042b2f",
-        },
+        Cyan: "hsl(180, 66%, 49%)",
       },
     },
   },
