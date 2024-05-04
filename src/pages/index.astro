@@ -1,17 +1,54 @@
 ---
+import Card from "../components/Card.astro";
 import Form from "../components/Form.astro";
 import Intro from "../components/Intro.astro";
 import Layout from "../layout/Layout.astro";
+import SectionLayout from "../layout/SectionLayout.astro";
 ---
 
 <Layout title="Shortly" description="">
-  <Intro />
-  <section class="z-30 w-full px-5">
+  <SectionLayout>
+    <Intro />
     <Form />
-  </section>
-  <section
-    class="bg-gray dark:bg-VeryDarkBlue w-full h-auto min-h-96 -mt-20 md:-mt-16"
-  >
-  
-  </section>
+  </SectionLayout>
 </Layout>
+<section
+  class="text-center bg-gray dark:bg-VeryDarkBlue w-full h-auto min-h-96 -mt-20 md:-mt-16"
+>
+  <h2 class="font-black text-3xl pt-44">Advanced Statistics</h2>
+  <p
+    class="max-w-xl mx-auto text-lg text-VeryDarkBlue dark:text-white text-pretty"
+  >
+    Track how your links are performing across the web with our advanced
+    statistics dashboard.
+  </p>
+  <div
+    class="relative flex flex-col md:flex-row gap-20 md:gap-6 justify-center items-center py-20"
+  >
+    <div
+      class="bg-Cyan w-[800px] md:w-1/2 h-2 absolute bottom md:top-64 rotate-90 md:rotate-6"
+    >
+    </div>
+    <Card
+      title="Brand Recognition"
+      description="Boost your brand recognition with each click. Generic links don’t mean a thing. Branded links help instil confidence in your content."
+      image="/images/icon-brand-recognition.svg"
+      alt="Brand Recongnition SVG logo"
+    />
+    <Card
+      class="md:-mb-16"
+      title="Detailed Records"
+      description="Gain insights into who is clicking your links. Knowing when and where people engage with your content helps inform better decisions."
+      image="/images/icon-detailed-records.svg"
+      alt="Detailed Records SVG logo"
+    />
+    <Card
+      class="md:-mb-36"
+      title="Fully Customizable"
+      description="Improve brand awareness and content discoverability through customizable links, supercharging audience engagement."
+      image="/images/icon-fully-customizable.svg"
+      alt="Fully Customizable SVG logo"
+    />
+  </div>
+  <Intro />
+</section>
