@@ -1,0 +1,202 @@
+---
+import Footer from "../components/Footer/Footer.astro";
+import Header from "../components/Header/Header.astro";
+
+interface Props {
+  title: string;
+  description: string;
+}
+
+const { title, description } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en" class="relative">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content={description} />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+    <meta name="generator" content={Astro.generator} />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <title>{title}</title>
+    <script>
+      if (
+        localStorage.getItem("theme") === "dark" ||
+        (!("theme" in localStorage) &&
+          window.matchMedia("(prefers-color-scheme: dark)").matches)
+      ) {
+        document.documentElement.classList.add("dark");
+      } else {
+        document.documentElement.classList.remove("dark");
+      }
+    </script>
+  </head>
+  <body class="bg-[#f7f7f7] dark:bg-zinc-900 text-zinc-900 dark:text-[#f7f7f7]">
+    <Header />
+    <main>
+      <slot />
+    </main>
+    <Footer />
+  </body>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Charmonman:wght@400;700&family=Italianno&display=swap"
+    rel="stylesheet"
+  />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Onest:wght@100..900&display=swap"
+    rel="stylesheet"
+  />
+</html>
+
+<style is:global>
+  html {
+    font-family: "Onest", system-ui, sans-serif;
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+  }
+
+  .radient-animation {
+    display: inline;
+    font-style: normal;
+    background: linear-gradient(
+      89.81deg,
+      #99f6f0 -1.72%,
+      #2acfcf 54.05%,
+      hsl(257, 27%, 26%) 99.78%
+    );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-fill-color: transparent;
+    background-size: 200% 200%;
+    animation: gradient 4s ease infinite;
+  }
+
+  @keyframes gradient {
+    0% {
+      background-position: 0% 100%;
+    }
+
+    50% {
+      background-position: 100% 0%;
+    }
+    100% {
+      background-position: 0% 100%;
+    }
+  }
+
+  .hamburger {
+    padding: 15px 15px;
+    cursor: pointer;
+    transition-property: opacity, filter;
+    transition-duration: 0.15s;
+    transition-timing-function: linear;
+    font: inherit;
+    color: inherit;
+    text-transform: none;
+    background-color: transparent;
+    border: 0;
+    margin: 0;
+    overflow: visible;
+  }
+  .hamburger:hover {
+    opacity: 0.7;
+  }
+  .hamburger.is-active:hover {
+    opacity: 0.7;
+  }
+  .hamburger.is-active .hamburger-inner,
+  .hamburger.is-active .hamburger-inner::before,
+  .hamburger.is-active .hamburger-inner::after {
+    background-color: #99f6f0;
+  }
+
+  .hamburger-box {
+    width: 40px;
+    height: 24px;
+    display: inline-block;
+    position: relative;
+  }
+
+  .hamburger-inner {
+    display: block;
+    top: 50%;
+    margin-top: -2px;
+  }
+  .hamburger-inner,
+  .hamburger-inner::before,
+  .hamburger-inner::after {
+    width: 40px;
+    height: 4px;
+    background: linear-gradient(
+      89.81deg,
+      #99f6f0 -1.72%,
+      #2acfcf 54.05%,
+      hsl(257, 27%, 26%) 99.78%
+    );
+    border-radius: 4px;
+    position: absolute;
+    transition-property: transform;
+    transition-duration: 0.15s;
+    transition-timing-function: ease;
+    animation: gradient 4s ease infinite;
+  }
+  .hamburger-inner::before,
+  .hamburger-inner::after {
+    content: "";
+    display: block;
+  }
+  .hamburger-inner::before {
+    top: -10px;
+  }
+  .hamburger-inner::after {
+    bottom: -10px;
+  }
+  .hamburger--emphatic {
+    overflow: hidden;
+  }
+  .hamburger--emphatic .hamburger-inner {
+    transition: background-color 0.125s 0.175s ease-in;
+  }
+  .hamburger--emphatic .hamburger-inner::before {
+    left: 0;
+    transition:
+      transform 0.125s cubic-bezier(0.6, 0.04, 0.98, 0.335),
+      top 0.05s 0.125s linear,
+      left 0.125s 0.175s ease-in;
+  }
+  .hamburger--emphatic .hamburger-inner::after {
+    top: 10px;
+    right: 0;
+    transition:
+      transform 0.125s cubic-bezier(0.6, 0.04, 0.98, 0.335),
+      top 0.05s 0.125s linear,
+      right 0.125s 0.175s ease-in;
+  }
+  .hamburger--emphatic.is-active .hamburger-inner {
+    transition-delay: 0s;
+    transition-timing-function: ease-out;
+    background-color: transparent !important;
+  }
+  .hamburger--emphatic.is-active .hamburger-inner::before {
+    left: -80px;
+    top: -80px;
+    transform: translate3d(80px, 80px, 0) rotate(45deg);
+    transition:
+      left 0.125s ease-out,
+      top 0.05s 0.125s linear,
+      transform 0.125s 0.175s cubic-bezier(0.075, 0.82, 0.165, 1);
+  }
+  .hamburger--emphatic.is-active .hamburger-inner::after {
+    right: -80px;
+    top: -80px;
+    transform: translate3d(-80px, 80px, 0) rotate(-45deg);
+    transition:
+      right 0.125s ease-out,
+      top 0.05s 0.125s linear,
+      transform 0.125s 0.175s cubic-bezier(0.075, 0.82, 0.165, 1);
+  }
+</style>

@@ -1,0 +1,13 @@
+<a
+  {...Astro.props}
+  class="navAnchor relative cursor-pointer -z-10 bg-transparent rounded-full px-1 lg:px-4 py-[1px] hover:bg-yellow-400/70 transition-all duration-500"
+>
+  {Astro.props.content}
+</a>
+
+<style>
+  .active {
+    background-color: rgba(255, 223, 107, 0.772);
+    color: black;
+  }
+</style>

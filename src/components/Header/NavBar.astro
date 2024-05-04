@@ -1,0 +1,26 @@
+---
+import ChangeThemeButton from "./ChangeThemeButton.astro";
+import NavItem from "./NavItem.astro";
+---
+
+<nav {...Astro.props}>
+  <ChangeThemeButton />
+  <NavItem checked href="/#header" content="Features" />
+  <NavItem href="/#progetti" content="Pricing" />
+  <NavItem href="/#chi-sono" content="Resources" />
+</nav>
+
+<script>
+  const $navItems = document.querySelectorAll(".navAnchor");
+  $navItems.forEach(($navItem) => {
+    $navItem.addEventListener("click", () => {
+      $navItems.forEach((item) => item.classList.remove("active"));
+      $navItem.classList.add("active");
+      const $hamburgerNavBar = document.querySelector("#hamburgerNavBar");
+      const $hamburgerButton = document.querySelector("#hamburgerButton");
+      $hamburgerButton.classList.toggle("is-active");
+      $hamburgerNavBar.classList.toggle("hidden");
+      $hamburgerNavBar.classList.toggle("flex");
+    });
+  });
+</script>
