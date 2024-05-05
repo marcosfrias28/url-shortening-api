@@ -76,19 +76,6 @@ const { title, description } = Astro.props;
     animation: gradient 4s ease infinite;
   }
 
-  @keyframes gradient {
-    0% {
-      background-position: 0% 100%;
-    }
-
-    50% {
-      background-position: 100% 0%;
-    }
-    100% {
-      background-position: 0% 100%;
-    }
-  }
-
   .hamburger {
     padding: 15px 15px;
     cursor: pointer;
@@ -199,5 +186,17 @@ const { title, description } = Astro.props;
       right 0.125s ease-out,
       top 0.05s 0.125s linear,
       transform 0.125s 0.175s cubic-bezier(0.075, 0.82, 0.165, 1);
+  }
+  @keyframes gradient {
+    0% {
+      background-position: 0% 100%;
+    }
+
+    50% {
+      background-position: 100% 0%;
+    }
+    100% {
+      background-position: 0% 100%;
+    }
   }
 </style>
