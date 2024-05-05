@@ -9,7 +9,7 @@ import Logo from "./Logo.astro";
   class="mx-auto backdrop-blur-lg bg-white/10 dark:bg-zinc-900/10 fixed top-0 z-50 w-screen h-auto px-10 py-[10px] md:px-10"
 >
   <div
-    class="relative flex flex-row items-center justify-center mx-auto max-w-[1100px]"
+    class="flex flex-row items-center justify-center mx-auto max-w-[1100px] gap-5"
   >
     <Logo />
 
@@ -31,7 +31,9 @@ import Logo from "./Logo.astro";
     <nav class="flex flex-row">
       <NavBar
         id="hamburgerNavBar"
-        class="hidden absolute bg-zinc-900/20 dark:bg-white text-black font-semibold md:rounded-xl rounded-none md:flex flex-col md:flex-row md:static z-50 h-auto top-20 left-0 py-12 md:py-3 gap-2 md:top-0 items-center justify-start px-2"
+        class=`
+        w-screen md:w-auto
+        hidden absolute bg-zinc-900/20 dark:bg-white text-black font-semibold md:rounded-xl rounded-none md:flex flex-col md:flex-row md:static z-50 h-auto left-0 top-20 py-12 md:py-3 gap-2 md:top-0 items-center justify-start px-2`
       />
     </nav>
     <ChangeThemeButton />

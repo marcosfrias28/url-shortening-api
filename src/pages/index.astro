@@ -1,16 +1,16 @@
 ---
 import Card from "../components/Card.astro";
-import Form from "../components/Form.astro";
+import { Form } from "../components/Form";
 import GetStartedButton from "../components/GetStartedButton.astro";
 import Intro from "../components/Intro.astro";
 import Layout from "../layout/Layout.astro";
 import SectionLayout from "../layout/SectionLayout.astro";
 ---
 
-<Layout title=" Shortlynk" description="">
+<Layout title="Shortlynker - URL shortener" description="">
   <SectionLayout>
     <Intro />
-    <Form />
+    <Form client:load />
   </SectionLayout>
   <section
     class="text-center bg-gray dark:bg-VeryDarkBlue w-full h-auto min-h-96 -mt-20 md:-mt-12 pb-32"
