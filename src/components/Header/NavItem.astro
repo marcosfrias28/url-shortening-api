@@ -1,13 +1,21 @@
-<a
-  {...Astro.props}
-  class="navAnchor relative cursor-pointer -z-10 bg-transparent rounded-full px-1 lg:px-4 py-[1px] hover:bg-yellow-400/70 transition-all duration-500"
->
-  {Astro.props.content}
+<a href={Astro.props.href}>
+  <label
+    class={`navAnchor cursor-pointer -z-10 bg-transparent rounded-full px-1 lg:px-4 py-[1px] hover:bg-Cyan/30 transition-all duration-500`}
+  >
+    <input
+      class="hidden"
+      type="radio"
+      name="navAnchor"
+      id=""
+      {...Astro.props}
+    />
+    {Astro.props.content}
+  </label>
 </a>
 
 <style>
-  .active {
-    background-color: rgba(255, 223, 107, 0.772);
+  label:has(input:checked) {
+    background-color: rgb(0, 255, 255);
     color: black;
   }
 </style>
