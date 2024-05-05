@@ -7,7 +7,7 @@ export function Form () {
 
   function fetchData (url) {
     axios
-      .get(`https://isaaa.gd/create.php?format=json&url=${url}`)
+      .get(`https://isaa.gd/create.php?format=json&url=${url}`)
       .then(({ data }) => {
         console.log(data.shorturl)
       })
@@ -40,7 +40,7 @@ export function Form () {
       >
         <input
           onChange={e => setUrl(e.target.value)}
-          className='bg-white border border-white rounded-md w-full h-1/2 px-4 py-3 outline-Cyan md:flex-grow'
+          className='bg-white border border-white text-black rounded-md w-full h-1/2 px-4 py-3 outline-Cyan md:flex-grow'
           type='text'
           placeholder='Shorten a link here... (www.example.com or example.com or https://www.example.com)'
         />
