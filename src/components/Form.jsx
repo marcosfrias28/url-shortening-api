@@ -46,7 +46,7 @@ export function Form () {
         />
         <button
           type='submit'
-          className='bg-Cyan rounded-md w-full md:w-auto text-nowrap h-1/2 px-7 py-3 font-bold hover:scale-105 transition-all'
+          className='bg-Cyan text-black rounded-md w-full md:w-auto text-nowrap h-1/2 px-7 py-3 font-bold hover:scale-105 transition-all'
         >
           shorten It!
         </button>
