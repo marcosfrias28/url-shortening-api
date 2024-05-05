@@ -10,13 +10,13 @@ const { title, description, image, alt } = Astro.props;
 ---
 
 <article
-  class={`${Astro.props.class} flex flex-col px-8 justify-center text-center md:text-start relative border-black w-[350px] h-[275px] bg-white rounded-md`}
+  class={`${Astro.props.class} flex flex-col p-8 justify-center text-center md:text-start relative w-[350px] h-auto min-h-[300px] bg-white rounded-md`}
 >
   <div
-    class="absolute rounded-full p-4 bg-DarkViolet -top-10 md:left-10 left-[138px]"
+    class="absolute rounded-full p-4 animate-bounce bg-DarkViolet -top-10 md:left-10 left-[138px]"
   >
     <img src={image} alt={alt} />
   </div>
-  <h2 class="text-2xl font-black mb-3">{title}</h2>
+  <h2 class="text-2xl text-black dark:text-black font-black my-3">{title}</h2>
   <p class="text-lg text-grayishViolet text-pretty">{description}</p>
 </article>
