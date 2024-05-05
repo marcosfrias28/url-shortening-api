@@ -23,11 +23,11 @@ import MFLogo from "./Logo.astro";
         <span class="block hamburger-inner"></span>
       </span>
     </button>
-    <div
+    <!-- <div
       id="menu-backdrop"
       class="absolute opacity-1 z-40 visible translate-x-[var(--left)] translate-y-[var(--top)] left-[var(--left)] top-[var(--top)] w-[var(--width)] h-[var(--height)] bg-black backdrop-blur-lg rounded ease-in-out transition-all duration-300"
     >
-    </div>
+    </div> -->
     <nav class="flex flex-row">
       <NavBar
         id="hamburgerNavBar"
@@ -51,9 +51,14 @@ import MFLogo from "./Logo.astro";
   const $navItems = document.querySelectorAll(".navAnchor");
 
   $navItems.forEach(($navItem) => {
+    //iterate on each element of the navBar component and add a Event Listener for clicks
     $navItem.addEventListener("click", () => {
-      $navItems.forEach((item) => item.classList.remove("active"));
-      $navItem.classList.add("active");
+      //Change checked Attribute if not setted
+      const $inputInsideAnchor = $navItem.querySelector("input");
+      if (!$inputInsideAnchor.checked) {
+        $inputInsideAnchor.checked = true;
+      }
+      //For Mobile devices, close the navigation Menu if some anchor is clicked
       const $hamburgerNavBar = document.querySelector("#hamburgerNavBar");
       const $hamburgerButton = document.querySelector("#hamburgerButton");
       $hamburgerButton.classList.toggle("is-active");
