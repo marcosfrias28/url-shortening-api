@@ -5,11 +5,17 @@ import { Toaster, toast } from 'sonner'
 export function Form () {
   const [url, setUrl] = useState('')
 
-  function fetchData (url) {
-    axios
-      .get(`https://isaa.gd/create.php?format=json&url=${url}`)
+  async function fetchData (url) {
+    await axios
+      .get(`https://is.gd/create.php?format=json&url=${url}`)
       .then(({ data }) => {
-        console.log(data.shorturl)
+        navigator.clipboard.writeText(data.shorturl).then(
+          toast.success(
+            <a target='_blank' href={data.shorturl}>
+              {data.shorturl}, URL copied to the clipboard
+            </a>
+          )
+        )
       })
       .catch(error => {
         toast.error(error)
