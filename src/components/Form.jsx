@@ -36,7 +36,7 @@ export function Form () {
   return (
     <div
       id='get-started'
-      className="relative p-6 md:p-5 mx-auto bg-DarkViolet rounded-xl bg-[url('/images/bg-shorten-mobile.svg')] md:bg-[url('/images/bg-shorten-desktop.svg')] bg-contain md:bg-cover bg-right bg-no-repeat w-full md:max-w-[1110px] h-[160px] md:h-auto min-w-[330px]"
+      className="relative p-6 md:p-10 mx-auto bg-DarkViolet rounded-xl bg-[url('/images/bg-shorten-mobile.svg')] md:bg-[url('/images/bg-shorten-desktop.svg')] bg-contain md:bg-cover bg-right bg-no-repeat w-full md:max-w-[1110px] h-[160px] md:h-auto min-w-[330px]"
     >
       <Toaster className='absolute bottom-24 left-0' richColors />
       <form
