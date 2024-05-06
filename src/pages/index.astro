@@ -7,15 +7,18 @@ import Layout from "../layout/Layout.astro";
 import SectionLayout from "../layout/SectionLayout.astro";
 ---
 
-<Layout title="Shortlynker - URL shortener" description="Shortlynker: Instantly shorten URLs for seamless sharing!">
+<Layout
+  title="Shortlynker - URL shortener"
+  description="Shortlynker: Instantly shorten URLs for seamless sharing!"
+>
   <SectionLayout>
     <Intro />
     <Form client:load />
   </SectionLayout>
   <section
-    class="text-center bg-gray dark:bg-VeryDarkBlue w-full h-auto min-h-96 -mt-20 md:-mt-12 pb-32"
+    class="text-center bg-gray/50 dark:bg-VeryDarkBlue w-full h-auto min-h-96 -mt-20 md:-mt-18 pb-24"
   >
-    <h2 class="font-black text-3xl pt-44 pb-5">Advanced Statistics</h2>
+    <h2 class="font-black text-4xl pt-44 pb-5">Advanced Statistics</h2>
     <p
       class="max-w-xl mx-auto text-lg text-VeryDarkBlue dark:text-white text-pretty"
     >
@@ -55,7 +58,7 @@ import SectionLayout from "../layout/SectionLayout.astro";
     id="resources"
     class="bg-DarkViolet bg-[url('/images/bg-boost-mobile.svg')] md:bg-[url('/images/bg-boost-desktop.svg')] bg-cover bg-right bg-no-repeat w-full h-80 md:h-64 flex flex-col justify-center items-center gap-10"
   >
-    <h2 class="text-3xl font-black text-white">Boost your links today</h2>
+    <h2 class="text-5xl font-black text-white">Boost your links today</h2>
     <div>
       <GetStartedButton />
     </div>

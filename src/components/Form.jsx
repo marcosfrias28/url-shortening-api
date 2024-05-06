@@ -36,9 +36,9 @@ export function Form () {
   return (
     <div
       id='get-started'
-      className="relative p-6 md:p-10 mx-auto bg-DarkViolet rounded-xl bg-[url('/images/bg-shorten-mobile.svg')] md:bg-[url('/images/bg-shorten-desktop.svg')] bg-contain md:bg-cover bg-right bg-no-repeat w-full md:max-w-[1110px] h-[160px] md:h-auto min-w-[330px]"
+      className="relative p-6 md:p-12 mx-auto bg-DarkViolet rounded-xl bg-[url('/images/bg-shorten-mobile.svg')] md:bg-[url('/images/bg-shorten-desktop.svg')] bg-contain md:bg-cover bg-right bg-no-repeat w-full md:max-w-[1110px] h-[160px] md:h-auto min-w-[330px]"
     >
-      <Toaster className='absolute bottom-24 left-0' richColors />
+      <Toaster className='absolute bottom-[165px] left-0' richColors />
       <form
         onSubmit={e => handleSubmit(e)}
         className='flex flex-col md:flex-row gap-5 h-full justify-center items-center border-rose-50'
@@ -46,15 +46,15 @@ export function Form () {
       >
         <input
           onChange={e => setUrl(e.target.value)}
-          className='bg-white border border-white text-black rounded-md w-full h-1/2 px-4 py-3 outline-Cyan md:flex-grow'
+          className='bg-white md:text-xl text-black rounded-lg w-full h-1/2 px-6 py-[18px] outline-Cyan md:flex-grow'
           type='text'
-          placeholder='Shorten a link here... (www.example.com or example.com or https://www.example.com)'
+          placeholder='Shorten a link here...'
         />
         <button
           type='submit'
-          className='bg-Cyan text-black rounded-md w-full md:w-auto text-nowrap h-1/2 px-7 py-3 font-bold hover:scale-105 transition-all'
+          className='text-lg bg-Cyan text-black dark:text-white rounded-md w-full md:w-auto text-nowrap h-1/2 px-9 py-[18px] font-bold hover:scale-105 transition-all'
         >
-          shorten It!
+          Shorten It!
         </button>
       </form>
     </div>
